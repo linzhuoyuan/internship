@@ -1,0 +1,71 @@
+{
+  "RollingWindow": {},
+  "TotalPerformance": null,
+  "AlphaRuntimeStatistics": null,
+  "Charts": {
+    "Strategy Equity": {
+      "Name": "Strategy Equity",
+      "ChartType": 0,
+      "Series": {
+        "Equity": {
+          "Name": "Equity",
+          "Unit": "$",
+          "Index": 0,
+          "Values": [],
+          "SeriesType": 2,
+          "Color": "",
+          "ScatterMarkerSymbol": "none"
+        },
+        "Daily Performance": {
+          "Name": "Daily Performance",
+          "Unit": "%",
+          "Index": 1,
+          "Values": [],
+          "SeriesType": 3,
+          "Color": "",
+          "ScatterMarkerSymbol": "none"
+        }
+      },
+      "Json": ""
+    }
+  },
+  "Orders": {},
+  "Holdings": {
+    "Total": {
+      "Symbol": {
+        "Value": "TOTAL",
+        "ID": " ",
+        "Permtick": "TOTAL"
+      },
+      "Type": 0,
+      "HoldingType": 0,
+      "CurrencySymbol": "$",
+      "AveragePrice": 0.0,
+      "Quantity": 0.0,
+      "QuantityT0": 0.0,
+      "MarketPrice": 0.0,
+      "ConversionRate": null,
+      "MarketValue": 0.0,
+      "UnrealizedPnL": 0.0,
+      "RealizedPnL": 0.0,
+      "ExercisePnL": 0.0,
+      "Commission": 0.0,
+      "Time": "0001-01-01T00:00:00"
+    }
+  },
+  "ProfitLoss": {},
+  "Statistics": {},
+  "RuntimeStatistics": {
+    "Unrealized": "$0.00",
+    "Fees": "-$0.00",
+    "Net Profit": "$0.00",
+    "Option Value": "$0.00",
+    "Equity Value": "$0.00",
+    "Future PnL": "$0.00",
+    "Return": "0.000%",
+    "Equity": "$100,000.00",
+    "Available Marigin": "$0.00",
+    "Used Marigin": "$0.00",
+    "Unsettled Cash": "$0.00"
+  }
+}

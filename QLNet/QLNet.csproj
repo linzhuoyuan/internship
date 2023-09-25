@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.11.4</VersionPrefix>
+    <TargetFramework>net6</TargetFramework>
+    <DefineConstants>$(DefineConstants);QL_NEGATIVE_RATES</DefineConstants>
+    <AssemblyName>QLNet</AssemblyName>
+    <PackageId>QLNet</PackageId>
+    <PackageVersion>1.11.4</PackageVersion>
+    <Authors>Andrea Maggiulli</Authors>
+    <Company />
+    <Description>A free/open-source library for quantitative finance</Description>
+    <Copyright>Copyright (c) 2008-2020 Andrea Maggiulli (a.maggiulli@gmail.com)</Copyright>
+    <PackageLicenseUrl>https://github.com/amaggiulli/QLNet/blob/develop/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>http://github.com/amaggiulli/qlnet</PackageProjectUrl>
+    <PackageTags>QLNet QuantLib quantitative finance financial</PackageTags>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Configurations>Debug;Release;AlgDebug</Configurations>
+    <Language>8</Language>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

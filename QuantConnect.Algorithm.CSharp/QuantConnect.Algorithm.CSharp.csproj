@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LiveStrategy_\**" />
+    <EmbeddedResource Remove="ccb\**" />
+    <EmbeddedResource Remove="LiveStrategy_\**" />
+    <None Remove="LiveStrategy_\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BasicTemplateCryptoDeribitAlgorithm.cs" />
+    <Compile Remove="LiveStrategy\Delta\DeribitSellCallComibinedBacktest.cs" />
+    <Compile Remove="LiveStrategy\Strategies\DeltaCollarStrategyFTXHedge.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveBinanceBear.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveBinanceHybrid.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveBinanceLeverage.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveBinanceSigma.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTX.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXBear.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXDeltaDecay.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXHybrid.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXLeverage.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXNew.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXOption - Copy.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXOption.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXOptionNew.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXPutOnly.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXSigma.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXStopLoss.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeltaCollarLiveFTXStopWin.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeribitHedge.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeribitSellCallCombined.cs" />
+    <Compile Remove="LiveStrategy\Trading\DeribitShortVega.cs" />
+    <Compile Remove="LiveStrategy\Trading\FTXClearPositions.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarPlaceStopLimit.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarPlaceStopLimit_MomDeribit.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarReadPosition.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarStrategyMomDeribit.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarStrategyMomDeribit_zouyi1.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZYCollarStrategyMomDeribit_zouyi2.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Multi.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Multi_New.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Multi_New_Binance1.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Multi_Test.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Test.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Tools.cs" />
+    <Compile Remove="LiveStrategy\Trading\ZY_Delta_Collar_Live_Binance_Tools_New.cs" />
+    <Compile Remove="live_trading\tools\OrderMessage.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarPlaceStopLimit.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarPlaceStopLimit_MomDeribit.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarReadPosition.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarStrategyMomDeribit.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarStrategyMomDeribit_zouyi1.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZYCollarStrategyMomDeribit_zouyi2.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Multi.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Multi_New.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Multi_New_Binance1.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Multi_Test.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Test.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Tools.cs" />
+    <Compile Remove="live_trading\zouyi\Trading\ZY_Delta_Collar_Live_Binance_Tools_New.cs" />
+    <Compile Remove="qlnet\MonteCarlo_Delta_Collar_Live_Deribit.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+    <PackageReference Include="alglib.net" Version="3.19.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calculators\Calculators.csproj" />
+    <ProjectReference Include="..\external\MomDataApi\MomDataApi.csproj" />
+    <ProjectReference Include="..\external\MyJetWallet.Connector.Ftx\FtxApi.csproj" />
+    <ProjectReference Include="..\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\QuantConnect.Algorithm.Framework\QuantConnect.Algorithm.Framework.csproj" />
+    <ProjectReference Include="..\QuantConnect.Algorithm\QuantConnect.Algorithm.csproj" />
+    <ProjectReference Include="..\QuantConnect.Indicators\QuantConnect.Indicators.csproj" />
+    <ProjectReference Include="..\QuantConnect\QuantConnect.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xD;&#xA;  &lt;Attributes /&gt;&#xD;&#xA;&lt;/HtmlEditState&gt;" /></VisualStudio></ProjectExtensions>
+</Project>

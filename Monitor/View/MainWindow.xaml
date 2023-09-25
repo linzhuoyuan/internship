@@ -1,0 +1,236 @@
+﻿<Window x:Class="Monitor.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dock="https://github.com/Dirkster99/AvalonDock"
+        xmlns:charts="clr-namespace:Monitor.ViewModel.Charts"
+        xmlns:charts1="clr-namespace:Monitor.View.Charts"
+        xmlns:grids="clr-namespace:Monitor.ViewModel.Grids"
+        xmlns:panels="clr-namespace:Monitor.View.Panels"
+        xmlns:grids1="clr-namespace:Monitor.View.Grids"
+        xmlns:sessions="clr-namespace:Monitor.Model.Sessions;assembly=Monitor.Model"
+        xmlns:panels1="clr-namespace:Monitor.ViewModel.Panels"
+        xmlns:view="clr-namespace:Monitor.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:viewModel="clr-namespace:Monitor.ViewModel"
+        mc:Ignorable="d"      
+        WindowStyle="None"
+        Foreground="{StaticResource ForegroundBrush}"
+        DataContext="{Binding MainWindow, Source={StaticResource Locator}}"
+        Loaded="MainWindow_OnLoaded"
+        WindowStartupLocation="CenterOwner"
+        Drop="MainWindow_OnDrop"
+        DragOver="MainWindow_OnDragOver"
+        AllowDrop="true"
+        Title="Monitor" MinWidth="1280" MinHeight="720">
+
+    <Window.Style>
+        <Style>
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome ResizeBorderThickness="4" CaptionHeight="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+
+    <Window.Resources>
+        <viewModel:LayoutUpdateStrategy x:Key="LayoutUpdateStrategy"/>
+        <dock:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding ExitCommand}" Key="F4" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding OpenSessionCommand}" Key="O" Modifiers="Control"/>
+    </Window.InputBindings>
+
+    <Grid Background="{StaticResource WindowBackgroundBrush}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Effect>
+            <DropShadowEffect Color="LightGray" BlurRadius="6" ShadowDepth="0"/>
+        </Grid.Effect>
+
+        <Grid Grid.Row="0" Background="#2d2d30" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/guige.ico" Stretch="Fill" Width="24" Height="24"/>
+            <Menu Grid.Column="1" IsMainMenu="True" Background="#2d2d30"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <MenuItem Header="{DynamicResource file}">
+                    <MenuItem Header="{DynamicResource open}" Command="{Binding OpenSessionCommand}" InputGestureText="Ctrl+O"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource close}" Command="{Binding CloseCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource export}" Command="{Binding ExportCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource exit}" Command="{Binding ExitCommand}" InputGestureText="Alt+F4"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource view}">
+                    <MenuItem Header="{DynamicResource statistics}" IsChecked="{Binding StatisticsPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="{DynamicResource runtime_statistics}" IsChecked="{Binding RuntimeStatisticsPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource profit_loss}" IsChecked="{Binding ProfitLossPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="{DynamicResource trades}" IsChecked="{Binding TradesPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource log}" IsChecked="{Binding LogPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <Separator/>
+                    <MenuItem Header="持仓明细" IsChecked="{Binding PositionDetailsPane.IsVisible,Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="Volatility Smile" IsChecked="{Binding VolatilitySmilePane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="Greeks" IsChecked="{Binding GreeksPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="Risk Matrix" IsChecked="{Binding RiskMatrixPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="Volatility" IsChecked="{Binding VolatilityPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                    <MenuItem Header="绩效归因" IsChecked="{Binding PerformanceAttributionPane.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource session}" IsEnabled="{Binding IsSessionActive}">
+                    <MenuItem Header="{DynamicResource connect}" Command="{Binding ConnectCommand}"/>
+                    <MenuItem Header="{DynamicResource disconnect}" Command="{Binding DisconnectCommand}"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource window}">
+                    <MenuItem Header="{DynamicResource save_window_layout}" Command="{Binding SaveLayoutCommand}" CommandParameter="{Binding ElementName=DockingManager}"/>
+                    <MenuItem Header="{DynamicResource revert_window_layout}" Command="{Binding RestoreLayoutCommand}" CommandParameter="{Binding ElementName=DockingManager}"/>
+                    <MenuItem Header="{DynamicResource reset_window_layout}" Command="{Binding ResetLayoutCommand}" CommandParameter="{Binding ElementName=DockingManager}"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource help}">
+                    <!--<MenuItem Header="_Charting documentation..." Click="BrowseChartingDocumentationMenuItem_OnClick"/>
+                <Separator/>
+                <MenuItem Header="_Monitor GitHub project..." Click="BrowseMonitorGithubMenuItem_OnClick"/>
+                <MenuItem Header="_LEAN Engine GitHub project..." Click="BrowseLeanGithubMenuItem_OnClick"/>
+                <Separator/>-->
+                    <MenuItem Header="{DynamicResource about}" Click="ShowAboutButton_OnClick"/>
+                </MenuItem>
+            </Menu>
+            <view:WinState Grid.Column="2"/>
+        </Grid>
+
+
+
+        <dock:DockingManager x:Name="DockingManager" Grid.Row="1" Theme="{Binding DefaultTheme}"
+                             DocumentsSource="{Binding Documents}"
+                             AnchorablesSource="{Binding Tools}"  
+                             LayoutUpdateStrategy="{StaticResource LayoutUpdateStrategy}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding RestoreLayoutCommand}" CommandParameter="{Binding ElementName=DockingManager}"></i:InvokeCommandAction>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+            <dock:DockingManager.LayoutItemContainerStyleSelector>
+
+                <view:PaneStyleSelector>
+                    <view:PaneStyleSelector.DocumentStyle>
+                        <Style TargetType="{x:Type dock:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.Name}"/>
+                            <Setter Property="CanClose" Value="{Binding Model.CanClose}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.Name}"/>
+                        </Style>
+                    </view:PaneStyleSelector.DocumentStyle>
+
+                    <view:PaneStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type dock:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.Name}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.Name}"/>
+                        </Style>
+                    </view:PaneStyleSelector.ToolStyle>
+                </view:PaneStyleSelector>
+
+            </dock:DockingManager.LayoutItemContainerStyleSelector>
+
+            <dock:DockingManager.Resources>
+
+                <DataTemplate DataType="{x:Type charts:ChartPaneViewModel}">
+                    <charts1:ChartPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type grids:GridPanelViewModel}">
+                    <grids1:GridPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:LogPanelViewModel}">
+                    <panels:LogPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:ProfitLossPanelViewModel}">
+                    <panels:ProfitLossPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:RuntimeStatisticsPanelViewModel}">
+                    <panels:RuntimeStatisticsPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:StatisticsPanelViewModel}">
+                    <panels:StatisticsPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:TradesPanelViewModel}">
+                    <panels:TradesPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:PositionDetailsPanelViewModel}">
+                    <panels:PositionDetailsPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type charts:VolatilitySmilePanelViewModel}">
+                    <panels:VolatilitySmilePanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:GreeksPanelViewModel}">
+                    <panels:GreeksPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:RiskMatrixPanelViewModel}">
+                    <panels:RiskMatrixPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:VolatilityPanelViewModel}">
+                    <panels:VolatilityPanel/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type panels1:PerformanceAttributionPanelViewModel}">
+                    <panels:PerformanceAttributionPanel/>
+                </DataTemplate>
+
+            </dock:DockingManager.Resources>
+
+            <dock:LayoutRoot>
+                <dock:LayoutPanel Orientation="Vertical">
+
+                </dock:LayoutPanel>
+            </dock:LayoutRoot>
+
+        </dock:DockingManager>
+
+        <StatusBar DataContext="{Binding StatusViewModel}" Grid.Row="2" Height="18" Margin="0,3,0,0">
+            <StatusBar.Resources>
+                <Style TargetType="StatusBar" BasedOn="{StaticResource StatusBarStyle}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SessionState}" Value="{x:Static sessions:SessionState.Subscribed}">
+                            <Setter Property="Background" Value="Chocolate"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StatusBar.Resources>
+            <StatusBarItem>
+                <TextBlock Text="{Binding ProjectName}"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="{Binding SessionName}"/>
+            </StatusBarItem>
+            <!--<StatusBarItem HorizontalAlignment="Right" Margin="0" Visibility="{Binding IsSessionActive, Converter={StaticResource BoolToVisibilityConverter}}">
+                <ProgressBar Opacity="0.2" Foreground="{StaticResource ButtonForeground}" BorderThickness="0" Background="{StaticResource ButtonBackground}" Width="120" Margin="0" Height="22" Minimum="0" Maximum="1" IsIndeterminate="{Binding IsProgressIndeterminate}" Value="{Binding Progress}"></ProgressBar>
+            </StatusBarItem>-->
+        </StatusBar>
+
+    </Grid>
+</Window>

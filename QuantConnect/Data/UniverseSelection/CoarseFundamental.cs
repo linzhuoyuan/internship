@@ -1,0 +1,217 @@
+﻿/*
+ * QUANTCONNECT.COM - Democratizing Finance, Empowering Individuals.
+ * Lean Algorithmic Trading Engine v2.0. Copyright 2014 QuantConnect Corporation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
+using System;
+using System.IO;
+
+namespace QuantConnect.Data.UniverseSelection
+{
+    /// <summary>
+    /// Defines summary information about a single symbol for a given date
+    /// </summary>
+    public class CoarseFundamental : BaseData
+    {
+        internal string market;
+        internal decimal dollarVolume;
+        internal long volume;
+        internal bool hasFundamentalData;
+        internal decimal priceFactor = 1m;
+        internal decimal splitFactor = 1m;
+
+        /// <summary>
+        /// Gets the market for this symbol
+        /// </summary>
+        public string Market
+        {
+            get => market;
+            set => market = value;
+        }
+
+        /// <summary>
+        /// Gets the day's dollar volume for this symbol
+        /// </summary>
+        public decimal DollarVolume
+        {
+            get => dollarVolume;
+            set => dollarVolume = value;
+        }
+
+        /// <summary>
+        /// Gets the day's total volume
+        /// </summary>
+        public long Volume
+        {
+            get => volume;
+            set => volume = value;
+        }
+
+        /// <summary>
+        /// Returns whether the symbol has fundamental data for the given date
+        /// </summary>
+        public bool HasFundamentalData
+        {
+            get => hasFundamentalData;
+            set => hasFundamentalData = value;
+        }
+
+        /// <summary>
+        /// Gets the price factor for the given date
+        /// </summary>
+        public decimal PriceFactor
+        {
+            get => priceFactor;
+            set => priceFactor = value;
+        }
+
+        /// <summary>
+        /// Gets the split factor for the given date
+        /// </summary>
+        public decimal SplitFactor
+        {
+            get => splitFactor;
+            set => splitFactor = value;
+        }
+
+        /// <summary>
+        /// Gets the combined factor used to create adjusted prices from raw prices
+        /// </summary>
+        public decimal PriceScaleFactor => priceFactor * splitFactor;
+
+        /// <summary>
+        /// Gets the split and dividend adjusted price
+        /// </summary>
+        public decimal AdjustedPrice => value * PriceScaleFactor;
+
+        protected override void SetEndTime(DateTime dateTime)
+        {
+            endTime = dateTime;
+            time = endTime - QuantConnect.Time.OneDay;
+        }
+
+        protected sealed override void SetTime(DateTime dateTime)
+        {
+            time = dateTime;
+            endTime = time + QuantConnect.Time.OneDay;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoarseFundamental"/> class
+        /// </summary>
+        public CoarseFundamental()
+        {
+            dataType = MarketDataType.Auxiliary;
+            SetTime(time);
+        }
+
+        /// <summary>
+        /// Return the URL string source of the file. This will be converted to a stream
+        /// </summary>
+        /// <param name="config">Configuration object</param>
+        /// <param name="date">Date of this source file</param>
+        /// <param name="isLiveMode">true if we're in live mode, false for backtesting mode</param>
+        /// <returns>String URL of source file.</returns>
+        public override SubscriptionDataSource GetSource(
+            SubscriptionDataConfig config, DateTime date, bool isLiveMode)
+        {
+            var path = Path.Combine(
+                Globals.DataFolder, 
+                "equity", config.Market, "fundamental", "coarse", date.ToString("yyyyMMdd") + ".csv");
+            return new SubscriptionDataSource(path, SubscriptionTransportMedium.LocalFile, FileFormat.Csv);
+        }
+
+        /// <summary>
+        /// Reader converts each line of the data source into BaseData objects. Each data type creates its own factory method, and returns a new instance of the object
+        /// each time it is called.
+        /// </summary>
+        /// <param name="config">Subscription data config setup object</param>
+        /// <param name="line">Line of the source document</param>
+        /// <param name="date">Date of the requested data</param>
+        /// <param name="isLiveMode">true if we're in live mode, false for backtesting mode</param>
+        /// <returns>Instance of the T:BaseData object generated by this line of the CSV</returns>
+        public override BaseData Reader(
+            SubscriptionDataConfig config, string line, DateTime date, bool isLiveMode)
+        {
+            try
+            {
+                var csv = line.Split(',');
+                var coarse = new CoarseFundamental
+                {
+                    symbol = new Symbol(SecurityIdentifier.Parse(csv[0]), csv[1]),
+                    Time = date,
+                    market = config.Market,
+                    value = csv[2].ToDecimal(),
+                    volume = csv[3].ToInt64(),
+                    dollarVolume = csv[4].ToDecimal()
+                };
+
+                if (csv.Length > 5)
+                {
+                    coarse.HasFundamentalData = Convert.ToBoolean(csv[5]);
+                }
+
+                if (csv.Length > 7)
+                {
+                    coarse.priceFactor = csv[6].ToDecimal();
+                    coarse.splitFactor = csv[7].ToDecimal();
+                }
+
+                return coarse;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Return a new instance clone of this object, used in fill forward
+        /// </summary>
+        /// <returns>A clone of the current object</returns>
+        public override BaseData Clone()
+        {
+            return new CoarseFundamental
+            {
+                symbol = symbol,
+                Time = Time,
+                dollarVolume = dollarVolume,
+                market = market,
+                value = value,
+                volume = volume,
+                dataType = MarketDataType.Auxiliary,
+                hasFundamentalData = hasFundamentalData,
+                priceFactor = priceFactor,
+                splitFactor = splitFactor
+            };
+        }
+
+        /// <summary>
+        /// Creates the symbol used for coarse fundamental data
+        /// </summary>
+        /// <param name="market">The market</param>
+        /// <param name="addGuid">True, will add a random GUID to allow uniqueness</param>
+        /// <returns>A coarse universe symbol for the specified market</returns>
+        public static Symbol CreateUniverseSymbol(string market, bool addGuid = true)
+        {
+            market = market.ToLower();
+            var ticker = $"qc-universe-coarse-{market}";
+            if (addGuid)
+            {
+                ticker += $"-{Guid.NewGuid()}";
+            }
+            var sid = SecurityIdentifier.GenerateEquity(SecurityIdentifier.DefaultDate, ticker, market);
+            return new Symbol(sid, ticker);
+        }
+    }
+}

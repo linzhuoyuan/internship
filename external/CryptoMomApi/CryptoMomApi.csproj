@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Product>MomApi for $(TargetFramework)</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>MomApi</PackageId>
+    <Description>MomApi</Description>
+    <Version>2.0.4</Version>
+    <FileVersion>2.0.4</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <RootNamespace>MomCrypto.Api</RootNamespace>
+    <AssemblyName>MomCrypto.Api</AssemblyName>
+    <Authors>hetao</Authors>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>quantmom.pfx</AssemblyOriginatorKeyFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="quantmom.pfx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetMQ" Version="4.0.1.10" />
+    <PackageReference Include="protobuf-net" Version="3.2.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoFrontend\CryptoFrontend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <!--
+  <Target Name="PushPackage" AfterTargets="Pack">
+    <Exec Command="pwsh $(SolutionDir)..\nuget\nuget_push.ps1 -path $(ProjectDir)bin" />
+  </Target>
+  -->
+</Project>

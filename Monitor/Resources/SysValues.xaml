@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                 
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:Int32 x:Key="Rows">1</s:Int32>
+    <s:Int32 x:Key="Columns">1</s:Int32>
+
+</ResourceDictionary>

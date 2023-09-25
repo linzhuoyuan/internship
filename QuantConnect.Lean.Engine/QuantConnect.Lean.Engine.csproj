@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="fasterflect" Version="3.0.0" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
+    <PackageReference Include="QuantConnect.pythonnet" Version="2.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantConnect.AlgorithmFactory\QuantConnect.AlgorithmFactory.csproj" />
+    <ProjectReference Include="..\QuantConnect.Algorithm\QuantConnect.Algorithm.csproj" />
+    <ProjectReference Include="..\QuantConnect.Api\QuantConnect.Api.csproj" />
+    <ProjectReference Include="..\QuantConnect.Brokerages\QuantConnect.Brokerages.csproj" />
+    <ProjectReference Include="..\QuantConnect.Compression\QuantConnect.Compression.csproj" />
+    <ProjectReference Include="..\QuantConnect.Configuration\QuantConnect.Configuration.csproj" />
+    <ProjectReference Include="..\QuantConnect.Indicators\QuantConnect.Indicators.csproj" />
+    <ProjectReference Include="..\QuantConnect.Logging\QuantConnect.Logging.csproj" />
+    <ProjectReference Include="..\QuantConnect.Messaging\QuantConnect.Messaging.csproj" />
+    <ProjectReference Include="..\QuantConnect\QuantConnect.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+[
+  {
+    "symbol": "ETH_USD",
+    "base_coin": "ETH",
+    "quote_coin": "USD",
+    "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "decimals": 18
+  },
+  {
+    "symbol": "BTC_USD",
+    "base_coin": "BTC",
+    "quote_coin": "USD",
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "decimals": 18
+  },
+  {
+    "symbol": "LOKA_USD",
+    "base_coin": "LOKA",
+    "quote_coin": "USD",
+    "address": "0x61E90A50137E1F645c9eF4a0d3A4f01477738406",
+    "decimals": 18
+  },
+  {
+    "symbol": "LUNA_USD",
+    "base_coin": "LUNA",
+    "quote_coin": "USD",
+    "address": "0xbd31EA8212119f94A611FA969881CBa3EA06Fa3d",
+    "decimals": 18
+  }
+]

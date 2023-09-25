@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Monitor.View.Panels.PerformanceAttributionPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:Monitor.ViewModel.Panels"
+             xmlns:local="clr-namespace:Monitor.View.Panels" xmlns:cvter="clr-namespace:Monitor.Converters"
+             d:DataContext="{d:DesignInstance Type=vm:PerformanceAttributionPanelViewModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <cvter:DataColorConverter x:Key="ColorConverterKey"/>
+        <cvter:HoldingTypeConverter x:Key="TypeConverterKey"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" IsReadOnly="True" GridLinesVisibility="None" AutoGenerateColumns="False" ItemsSource="{Binding HoldingPnls}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource holding_symbol}" Binding="{Binding holdingSymbol}"/>
+                <DataGridTemplateColumn Header="{DynamicResource holding_type_pnl}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding holdingType, Converter={StaticResource TypeConverterKey}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="{DynamicResource delta_pnl}" Binding="{Binding DeltaPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource gamma_pnl}" Binding="{Binding GammaPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource vega_pnl}" Binding="{Binding VegaPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource theta_pnl}" Binding="{Binding ThetaPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource rho_pnl}" Binding="{Binding RhoPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource total_pnl}" Binding="{Binding TotalPnl}"/>
+                <DataGridTextColumn Header="{DynamicResource no_imv_pnl}" Binding="{Binding NoImvPnl}"/>
+                <!--<DataGridTextColumn Header="{DynamicResource datetime_pnl}" Binding="{Binding DateTime, StringFormat='yyyy-MM-dd HH:mm:ss'}"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,70 @@
+namespace MomCrypto.Api
+{
+    public static class MomMessageType
+    {
+        public const byte Ping = 1;
+        public const byte Pong = 2;
+        public const byte Close = 3;
+        public const byte Init = 4;
+        public const byte Connected = 5;
+        public const byte Disconnected = 6;
+        public const byte RspError = 7;
+        public const byte UserLogin = 8;
+        public const byte RspUserLogin = 9;
+        public const byte Subscribe = 10;
+        public const byte RspSubscribe = 11;
+        public const byte RtnDepthMarketData = 12;
+        public const byte Unsubscribe = 13;
+        public const byte RspUnsubscribe = 14;
+        public const byte QryInstrument = 15;
+        public const byte RspQryInstrument = 16;
+        public const byte QryOrder = 17;
+        public const byte RspQryOrder = 18;
+        public const byte RtnOrder = 19;
+        public const byte QryTrade = 20;
+        public const byte RspQryTrade = 21;
+        public const byte RtnTrade = 22;
+        public const byte QryAccount = 23;
+        public const byte RspQryAccount = 24;
+        public const byte QryPosition = 25;
+        public const byte RspQryPosition = 26;
+        public const byte QryPositionDetail = 27;
+        public const byte RspQryPositionDetail = 28;
+        public const byte InputOrder = 29;
+        public const byte RspInputOrder = 30;
+        public const byte OrderAction = 31;
+        public const byte RspOrderAction = 32;
+        public const byte QryFund = 33;
+        public const byte RspQryFund = 34;
+        public const byte QryFundAccount = 35;
+        public const byte RspQryFundAccount = 36;
+        public const byte QryFundPosition = 37;
+        public const byte RspQryFundPosition = 38;
+        public const byte RtnPosition = 39;
+        public const byte RtnAccount = 40;
+        public const byte RtnFundAccount = 41;
+        public const byte RtnFundPosition = 42;
+        public const byte UserAction = 43;
+        public const byte RspUserAction = 44;
+        public const byte FundAction = 45;
+        public const byte RspFundAction = 46;
+        public const byte QryUser = 47;
+        public const byte RspQryUser = 48;
+        public const byte DataSync = 49;
+        public const byte RspDataSync = 50;
+        public const byte UpdatePositionProfit = 51;
+        public const byte QryExchangePosition = 52;
+        public const byte RspQryExchangePosition = 53;
+        public const byte QryExchangeOrder = 54;
+        public const byte RspQryExchangeOrder = 55;
+        public const byte QryExchangeAccount = 56;
+        public const byte RspQryExchangeAccount = 57;
+        public const byte InstrumentExpired = 58;
+        public const byte ChangeLeverage = 59;
+        public const byte RspChangeLeverage = 60;
+        public const byte CashJournal = 61;
+        public const byte RspCashJournal = 62;
+        public const byte SyncAccount = 63;
+        public const byte InstrumentListed = 64;
+    }
+}

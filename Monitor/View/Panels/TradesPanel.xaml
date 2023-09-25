@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Monitor.View.Panels.TradesPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:panels="clr-namespace:Monitor.ViewModel.Panels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=panels:TradesPanelViewModel,IsDesignTimeCreatable=True}"
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <DataGrid IsReadOnly="True" GridLinesVisibility="None" AutoGenerateColumns="False" ItemsSource="{Binding Orders}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource trade_id}" Binding="{Binding TradeId}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_created_time}" Binding="{Binding Time, StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_symbol}" Binding="{Binding Symbol.Value}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_price}" Binding="{Binding Price, StringFormat={}{0:F4}}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_offset}" Binding="{Binding Offset}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_quantity}" Binding="{Binding Amount}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_trade_value}" Binding="{Binding TradeValue}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_operation}" Binding="{Binding Direction}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_status}" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="{DynamicResource trade_tag}" Binding="{Binding Tag}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

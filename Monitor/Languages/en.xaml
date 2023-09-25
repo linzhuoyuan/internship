@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Monitor.Languages">
+
+
+    <!--region Menu-->
+    <s:String x:Key="file">_File</s:String>
+    <s:String x:Key="view">_View</s:String>
+    <s:String x:Key="session">_Session</s:String>
+    <s:String x:Key="window">_Window</s:String>
+    <s:String x:Key="help">_Help</s:String>
+    <!--#endregion-->
+    <!--#region Menu File Items-->
+    <s:String x:Key="open">Open...</s:String>
+    <s:String x:Key="close">Close</s:String>
+    <s:String x:Key="export">Export</s:String>
+    <s:String x:Key="exit">Exit</s:String>
+    <!--#endregion-->
+    <!--#region Menu View Items-->
+    <s:String x:Key="statistics">Statistics</s:String>
+    <s:String x:Key="runtime_statistics">Runtime Statistics</s:String>
+    <s:String x:Key="profit_loss">Profit &amp; Loss</s:String>
+    <s:String x:Key="trades">Trades</s:String>
+    <s:String x:Key="log">Log</s:String>
+    <!--#endregion-->
+    <!--#region Menu Session Items-->
+    <s:String x:Key="connect">Connect</s:String>
+    <s:String x:Key="disconnect">Disconnect</s:String>
+    <!--#endregion-->
+    <!--#region Menu Window Items-->
+    <s:String x:Key="save_window_layout">Save Window Layout</s:String>
+    <s:String x:Key="revert_window_layout">Revert Window Layout</s:String>
+    <s:String x:Key="reset_window_layout">Reset Window Layout</s:String>
+    <!--#endregion-->
+
+    <!--#region Menu Help Items-->
+    <s:String x:Key="about">About</s:String>
+    <!--#endregion-->
+
+    <!--#region About Window-->
+    <s:String x:Key="about_title">About Statistics</s:String>
+    <!--#endregion-->
+
+    <!--#region Runtime Statistics-->
+    <s:String x:Key="runtime_name">Name</s:String>
+    <s:String x:Key="runtime_value">Value</s:String>
+    <s:String x:Key="unrealized">Unrealized</s:String>
+    <s:String x:Key="fees">Fees</s:String>
+    <s:String x:Key="runtime_net_profit">Net Profit</s:String>
+    <s:String x:Key="return">Return</s:String>
+    <s:String x:Key="equity">Equity</s:String>
+    <!--#endregion-->
+
+    <!--#region Statistics-->
+    <s:String x:Key="statistics_name">Name</s:String>
+    <s:String x:Key="statistics_value">Value</s:String>
+    <s:String x:Key="total_trades">Total Trades</s:String>
+    <s:String x:Key="average_win">Average Win</s:String>
+    <s:String x:Key="average_loss">Average Loss</s:String>
+    <s:String x:Key="compounding_annual_return">Compounding Annual Return</s:String>
+    <s:String x:Key="drawdown">Drawdown</s:String>
+    <s:String x:Key="expectancy">Expectancy</s:String>
+    <s:String x:Key="statistics_net_profit">Net Profit</s:String>
+    <s:String x:Key="sharpe_ratio">Sharpe Ratio</s:String>
+    <s:String x:Key="loss_rate">Loss Rate</s:String>
+    <s:String x:Key="win_rate">Win Rate</s:String>
+    <s:String x:Key="profit_loss_ratio">Profit-Loss Ratio</s:String>
+    <s:String x:Key="alpha">Alpha</s:String>
+    <s:String x:Key="beta">Beta</s:String>
+    <s:String x:Key="annual_standard_deviation">Annual Standard Deviation</s:String>
+    <s:String x:Key="annual_variance">Annual Variance</s:String>
+    <s:String x:Key="information_ratio">Information Ratio</s:String>
+    <s:String x:Key="tracking_error">Tracking Error</s:String>
+    <s:String x:Key="treynor_ratio">Treynor Ratio</s:String>
+    <s:String x:Key="total_fees">Total Fees</s:String>
+    <!--#endregion-->
+
+    <!--#region Log-->
+    <s:String x:Key="log_type">Type</s:String>
+    <s:String x:Key="log_date">Date</s:String>
+    <s:String x:Key="log_content">Content</s:String>
+    <!--#endregion-->
+
+    <!--#region Trades-->
+    <s:String x:Key="trade_id">Id</s:String>
+    <s:String x:Key="trade_created_time">CreatedTime</s:String>
+    <s:String x:Key="trade_fill_time">FillTime</s:String>
+    <s:String x:Key="trade_symbol">Symbol</s:String>
+    <s:String x:Key="trade_price">Price</s:String>
+    <s:String x:Key="trade_currency">Currency</s:String>
+    <s:String x:Key="trade_type">Type</s:String>
+    <s:String x:Key="trade_offset">Offset</s:String>
+    <s:String x:Key="trade_quantity">Quantity</s:String>
+    <s:String x:Key="trade_fill_quantity">FillQuantity</s:String>
+    <s:String x:Key="trade_trade_value">TradeValue</s:String>
+    <s:String x:Key="trade_operation">Operation</s:String>
+    <s:String x:Key="trade_status">Status</s:String>
+    <s:String x:Key="trade_tag">Tag</s:String>
+    <!--#endregion-->
+
+    <!--#region Profit Loss-->
+    <s:String x:Key="profit_loss_date">Date</s:String>
+    <s:String x:Key="profit/loss">Profit/Loss</s:String>
+    <!--#endregion-->
+
+    <s:String x:Key="strategy_equity">Strategy Equity</s:String>
+    <s:String x:Key="strategy_grid">Grid</s:String>
+    <s:String x:Key="strategy_zoom_fit">Zoom to fit</s:String>
+    <s:String x:Key="strategy_lock">Lock</s:String>
+
+    <!--#region Holding-->
+    <s:String x:Key="contract_code">Code</s:String>
+    <s:String x:Key="holding_type">HoldingType</s:String>
+    <s:String x:Key="currency_symbol">CurrencySymbol</s:String>
+    <s:String x:Key="quantity">Quantity</s:String>
+    <s:String x:Key="market_price">MarketPrice</s:String>
+    <s:String x:Key="conversion_rate">ConversionRate</s:String>
+    <s:String x:Key="market_value">MarketValue</s:String>
+    <s:String x:Key="realizedPnL">RealizedPnL</s:String>
+    <s:String x:Key="unrealizedPnL">UnrealizedPnL</s:String>
+    <s:String x:Key="type_net">Net</s:String>
+    <s:String x:Key="type_long">Long</s:String>
+    <s:String x:Key="type_short">Short</s:String>
+    <s:String x:Key="exercisePnL">ExercisePnL</s:String>
+    <s:String x:Key="averagePrice">AveragePrice</s:String>
+    <s:String x:Key="datetime">DateTime</s:String>
+    <!--#endregion-->
+
+    <!--#region PerformanceAttribution-->
+    <s:String x:Key="holding_symbol">HoldingSymbol</s:String>
+    <s:String x:Key="holding_type_pnl">HoldingsType</s:String>
+    <s:String x:Key="delta_pnl">DeltaPnl</s:String>
+    <s:String x:Key="gamma_pnl">GammaPnl</s:String>
+    <s:String x:Key="vega_pnl">VegaPnl</s:String>
+    <s:String x:Key="theta_pnl">ThetaPnl</s:String>
+    <s:String x:Key="rho_pnl">RhpPnl</s:String>
+    <s:String x:Key="total_pnl">TotalPnl</s:String>
+    <s:String x:Key="no_imv_pnl">NoImvPnl</s:String>
+    <s:String x:Key="datetime_pnl">DateTime</s:String>
+    <!--#endregion-->
+    
+</ResourceDictionary>

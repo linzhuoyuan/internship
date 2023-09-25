@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutRoot>
+  <RootPanel Orientation="Horizontal">
+    <LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="371" DockHeight="184.5">
+      <LayoutAnchorablePane DockWidth="371" FloatingWidth="575" FloatingHeight="689" FloatingLeft="20" FloatingTop="526">
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="资金查询" IsSelected="True" ContentId="资金查询" FloatingLeft="20" FloatingTop="526" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:41:24" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="0" />
+      </LayoutAnchorablePane>
+      <LayoutAnchorablePaneGroup Orientation="Horizontal" FloatingWidth="575" FloatingHeight="689" FloatingLeft="184" FloatingTop="555">
+        <LayoutAnchorablePane DockHeight="184.5" FloatingWidth="575" FloatingHeight="689" FloatingLeft="184" FloatingTop="555">
+          <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="回测绩效指标" IsSelected="True" ContentId="回测绩效指标" FloatingLeft="184" FloatingTop="555" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:38:30" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="1" />
+        </LayoutAnchorablePane>
+      </LayoutAnchorablePaneGroup>
+    </LayoutAnchorablePaneGroup>
+    <LayoutPanel Orientation="Horizontal" DockWidth="1543*">
+      <LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="223" DockHeight="224.5" FloatingWidth="575" FloatingHeight="689" FloatingLeft="-1846" FloatingTop="478">
+        <LayoutAnchorablePane Id="ebb2dd68-7f77-4799-adc2-ffaced37015c" DockWidth="223" DockHeight="0.601601701302288*" FloatingWidth="575" FloatingHeight="689" FloatingLeft="-1792" FloatingTop="483" />
+        <LayoutAnchorablePane Id="4f684ce6-4a82-4d97-9af0-546a2c4a03b6" DockHeight="1.5556513086831*" FloatingWidth="575" FloatingHeight="689" FloatingLeft="-1846" FloatingTop="478" />
+      </LayoutAnchorablePaneGroup>
+      <LayoutPanel Orientation="Vertical">
+        <LayoutPanel Orientation="Horizontal">
+          <LayoutDocumentPaneGroup Orientation="Vertical">
+            <LayoutDocumentPane DockHeight="659.5*">
+              <LayoutDocument Title="Strategy Equity" IsSelected="True" IsLastFocusedDocument="True" ContentId="Strategy Equity" FloatingLeft="1020" FloatingTop="348" FloatingWidth="1294" FloatingHeight="332" CanClose="False" LastActivationTimeStamp="06/27/2020 11:53:09" PreviousContainerId="ccc9237e-e919-47ac-b357-10c40891da28" PreviousContainerIndex="3" />
+              <LayoutDocument Title="Strategy Equity In BTC" ContentId="Strategy Equity In BTC" FloatingLeft="1018" FloatingTop="357" FloatingWidth="1294" FloatingHeight="332" CanClose="False" LastActivationTimeStamp="06/27/2020 11:53:09" PreviousContainerId="ccc9237e-e919-47ac-b357-10c40891da28" PreviousContainerIndex="4" />
+              <LayoutDocument Title="Benchmark" ContentId="Benchmark" FloatingLeft="891" FloatingTop="339" FloatingWidth="1294" FloatingHeight="332" CanClose="False" LastActivationTimeStamp="06/27/2020 11:53:08" PreviousContainerId="ccc9237e-e919-47ac-b357-10c40891da28" PreviousContainerIndex="4" />
+              <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Greeks" ContentId="Greeks" FloatingLeft="793" FloatingTop="48" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:39:50" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="3" />
+            </LayoutDocumentPane>
+            <LayoutDocumentPane Id="ccc9237e-e919-47ac-b357-10c40891da28" DockHeight="321.5*">
+              <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="日志" IsSelected="True" ContentId="日志" FloatingLeft="1016" FloatingTop="775" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="0" />
+              <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="成交回报" ContentId="成交回报" FloatingLeft="1016" FloatingTop="769" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:38:44" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="1" />
+              <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="持仓明细" ContentId="持仓明细" FloatingLeft="820" FloatingTop="451" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:37:57" />
+            </LayoutDocumentPane>
+          </LayoutDocumentPaneGroup>
+        </LayoutPanel>
+        <LayoutAnchorablePaneGroup Orientation="Horizontal" DockHeight="184.5" FloatingWidth="575" FloatingHeight="689" FloatingLeft="-1156" FloatingTop="806">
+          <LayoutAnchorablePane Id="58f1ec50-95d1-4a47-9b0f-73f89461f54e" DockWidth="1.06543967280164*" DockHeight="184.5" FloatingWidth="575" FloatingHeight="689" FloatingLeft="-1136" FloatingTop="782" />
+        </LayoutAnchorablePaneGroup>
+      </LayoutPanel>
+      <LayoutAnchorablePane Id="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" DockWidth="253" DockHeight="184.5" FloatingWidth="575" FloatingHeight="689" FloatingLeft="1305" FloatingTop="546">
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="盈亏统计" IsSelected="True" ContentId="盈亏统计" CanClose="False" LastActivationTimeStamp="06/27/2020 11:38:55" />
+      </LayoutAnchorablePane>
+    </LayoutPanel>
+  </RootPanel>
+  <TopSide />
+  <RightSide />
+  <LeftSide />
+  <BottomSide />
+  <FloatingWindows />
+  <Hidden>
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Runtime Statistics" IsSelected="True" ContentId="Runtime Statistics" FloatingLeft="-1792" FloatingTop="483" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="ebb2dd68-7f77-4799-adc2-ffaced37015c" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Statistics" IsSelected="True" ContentId="Statistics" FloatingLeft="-1846" FloatingTop="478" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="4f684ce6-4a82-4d97-9af0-546a2c4a03b6" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Log" IsSelected="True" ContentId="Log" FloatingLeft="653" FloatingTop="785" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="58f1ec50-95d1-4a47-9b0f-73f89461f54e" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Trades" IsSelected="True" ContentId="Trades" FloatingLeft="-786" FloatingTop="781" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="58f1ec50-95d1-4a47-9b0f-73f89461f54e" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideWidth="149" AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Profit &amp; Loss" IsSelected="True" ContentId="Profit &amp; Loss" FloatingLeft="1305" FloatingTop="546" FloatingWidth="575" FloatingHeight="689" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="0" />
+    <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="Volatility Smile" IsSelected="True" ContentId="Volatility Smile" CanClose="False" LastActivationTimeStamp="06/27/2020 11:52:59" PreviousContainerId="4b599dcd-c66e-4b0a-b3ec-cfebdda85ad5" PreviousContainerIndex="6" />
+  </Hidden>
+</LayoutRoot>

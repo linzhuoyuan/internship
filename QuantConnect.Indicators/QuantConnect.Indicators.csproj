@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantConnect.Logging\QuantConnect.Logging.csproj" />
+    <ProjectReference Include="..\QuantConnect\QuantConnect.csproj" />
+  </ItemGroup>
+
+</Project>

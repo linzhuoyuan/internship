@@ -1,0 +1,18 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/Highlighting/AnalysisEnabled/@EntryValue">VISIBLE_FILES</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=14f54d32_002D0779_002D4d04_002D8dd8_002De38a2b8f12c1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LiveStartOnBacktest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.AlgorithmLiveStartTests.LiveStartOnBacktest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.AlgorithmLiveStartTests.LiveStartAtNextDay&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.AlgorithmLiveStartTests.LiveStopOnDaylightSavings&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.DeribitCombinedTests.DeribitCombined&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.AlgorithmLiveStartTests.LiveStopAtNextDay&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.DeribitSellStraddleTests.TestFixOneSideTrade&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.DeribitSellStraddleTests.TestFixOneSideTrade1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.DeribitSellStraddleTests.TestFixOneSideTrade2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D6E0D7F4-E427-4A25-B77F-A7135C977A73::net6.0::AblTest.Algorithm.DeribitSellStraddleTests.TestHedge&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	</wpf:ResourceDictionary>

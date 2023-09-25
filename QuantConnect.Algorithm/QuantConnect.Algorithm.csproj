@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Alphas\NullAlphaModel.py" />
+    <None Remove="Execution\ImmediateExecutionModel.py" />
+    <None Remove="Execution\NullExecutionModel.py" />
+    <None Remove="Portfolio\NullPortfolioConstructionModel.py" />
+    <None Remove="Risk\CompositeRiskManagementModel.py" />
+    <None Remove="Risk\NullRiskManagementModel.py" />
+    <None Remove="Selection\ManualUniverseSelectionModel.py" />
+    <None Remove="Selection\UniverseSelectionModel.py" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Alphas\NullAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Execution\ImmediateExecutionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Execution\NullExecutionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\NullPortfolioConstructionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\CompositeRiskManagementModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\NullRiskManagementModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\ManualUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\UniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="QuantConnect.pythonnet" Version="2.0.18" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calculators\Calculators.csproj" />
+    <ProjectReference Include="..\external\OneInchCore\OneInchCore.csproj" />
+    <ProjectReference Include="..\QuantConnect.Indicators\QuantConnect.Indicators.csproj" />
+    <ProjectReference Include="..\QuantConnect.Logging\QuantConnect.Logging.csproj" />
+    <ProjectReference Include="..\QuantConnect\QuantConnect.csproj" />
+  </ItemGroup>
+
+</Project>

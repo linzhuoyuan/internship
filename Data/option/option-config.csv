@@ -1,0 +1,7 @@
+market,symbol,exercise_settlement_type,option_exercise_model,price_model
+sse,sh510050,PhysicalDelivery,DefaultExerciseModel,MonteCarlo
+sse,sh510300,PhysicalDelivery,DefaultExerciseModel,BlackScholes
+szse,sz159919,PhysicalDelivery,DefaultExerciseModel,BlackScholes
+okex,btcusd,Cash,DefaultExerciseModel,BlackScholes
+deribit,btcusd,Cash,DefaultExerciseModel,BlackScholes
+deribit,ethusd,Cash,DefaultExerciseModel,BlackScholes

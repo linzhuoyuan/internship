@@ -1,0 +1,152 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6</TargetFramework>
+    <Language>10</Language>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Alphas\BasePairsTradingAlphaModel.py" />
+    <None Remove="Alphas\ConstantAlphaModel.py" />
+    <None Remove="Alphas\EmaCrossAlphaModel.py" />
+    <None Remove="Alphas\HistoricalReturnsAlphaModel.py" />
+    <None Remove="Alphas\MacdAlphaModel.py" />
+    <None Remove="Alphas\PearsonCorrelationPairsTradingAlphaModel.py" />
+    <None Remove="Alphas\RsiAlphaModel.py" />
+    <None Remove="Execution\StandardDeviationExecutionModel.py" />
+    <None Remove="Execution\VolumeWeightedAveragePriceExecutionModel.py" />
+    <None Remove="Portfolio\BlackLittermanOptimizationPortfolioConstructionModel.py" />
+    <None Remove="Portfolio\EqualWeightingPortfolioConstructionModel.py" />
+    <None Remove="Portfolio\InsightWeightingPortfolioConstructionModel.py" />
+    <None Remove="Portfolio\MaximumSharpeRatioPortfolioOptimizer.py" />
+    <None Remove="Portfolio\MeanVarianceOptimizationPortfolioConstructionModel.py" />
+    <None Remove="Portfolio\MinimumVariancePortfolioOptimizer.py" />
+    <None Remove="Portfolio\UnconstrainedMeanVariancePortfolioOptimizer.py" />
+    <None Remove="Risk\MaximumDrawdownPercentPerSecurity.py" />
+    <None Remove="Risk\MaximumDrawdownPercentPortfolio.py" />
+    <None Remove="Risk\MaximumSectorExposureRiskManagementModel.py" />
+    <None Remove="Risk\MaximumUnrealizedProfitPercentPerSecurity.py" />
+    <None Remove="Risk\TrailingStopRiskManagementModel.py" />
+    <None Remove="Selection\EmaCrossUniverseSelectionModel.py" />
+    <None Remove="Selection\FundamentalUniverseSelectionModel.py" />
+    <None Remove="Selection\FutureUniverseSelectionModel.py" />
+    <None Remove="Selection\OptionUniverseSelectionModel.py" />
+    <None Remove="Selection\QC500UniverseSelectionModel.py" />
+    <None Remove="Selection\UncorrelatedUniverseSelectionModel.py" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Alphas\BasePairsTradingAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\ConstantAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\EmaCrossAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\HistoricalReturnsAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\MacdAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\PearsonCorrelationPairsTradingAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Alphas\RsiAlphaModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Execution\StandardDeviationExecutionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Execution\VolumeWeightedAveragePriceExecutionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\BlackLittermanOptimizationPortfolioConstructionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\EqualWeightingPortfolioConstructionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\InsightWeightingPortfolioConstructionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\MaximumSharpeRatioPortfolioOptimizer.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\MeanVarianceOptimizationPortfolioConstructionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\MinimumVariancePortfolioOptimizer.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Portfolio\UnconstrainedMeanVariancePortfolioOptimizer.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\MaximumDrawdownPercentPerSecurity.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\MaximumDrawdownPercentPortfolio.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\MaximumSectorExposureRiskManagementModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\MaximumUnrealizedProfitPercentPerSecurity.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Risk\TrailingStopRiskManagementModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\EmaCrossUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\FundamentalUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\FutureUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\OptionUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\QC500UniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Selection\UncorrelatedUniverseSelectionModel.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord" Version="3.8.0" />
+    <PackageReference Include="Accord.Math" Version="3.8.0" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="QuantConnect.pythonnet" Version="2.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantConnect.Algorithm\QuantConnect.Algorithm.csproj" />
+    <ProjectReference Include="..\QuantConnect.Indicators\QuantConnect.Indicators.csproj" />
+    <ProjectReference Include="..\QuantConnect\QuantConnect.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\hetao\.nuget\packages\accord\3.8.0\build\Accord.dll.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\hetao\.nuget\packages\accord\3.8.0\build\Accord.dll.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\hetao\.nuget\packages\accord\3.8.0\build\Accord.dll.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\hetao\.nuget\packages\accord\3.8.0\build\Accord.dll.config" />
+  </ItemGroup>
+
+</Project>

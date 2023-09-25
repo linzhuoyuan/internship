@@ -1,0 +1,13 @@
+global using Microsoft.VisualStudio.TestTools.UnitTesting;
+global using QuantConnect;
+global using QuantConnect.Algorithm;
+global using QuantConnect.Brokerages;
+global using QuantConnect.Configuration;
+global using QuantConnect.Data;
+global using QuantConnect.Securities;
+global using QuantConnect.Securities.Cfd;
+global using QuantConnect.Securities.Crypto;
+global using QuantConnect.Securities.Equity;
+global using QuantConnect.Securities.Forex;
+global using QuantConnect.Securities.Future;
+global using QuantConnect.Securities.Option;

@@ -1,0 +1,41 @@
+# vs 相关设置
+.vs
+.vscode
+
+# 二进制文件与中间文件
+bin
+obj
+
+# Nuget包文件
+packages
+
+# 数据文件
+Data/*.zip
+Data/symbol-properties/*.csv
+*.zip
+
+# 日志文件
+*.log
+
+# 日志文件
+QuantConnect.Lean.Launcher/*.txt
+
+# 普通备份文件
+*.bak
+#测试结果
+TestResults
+DeribitSkewArbBacktestLimitOrder.json
+QuantConnect.Lean.Launcher/DeribitSkewArbBacktestLimitOrder.json
+QuantConnect.Lean.Launcher/SSE50ETF*Backtest*.json
+# MacOS meta data file
+*.DS_Store
+
+launchSettings.json
+
+/QuantConnect.Algorithm.Python/__pycache__
+/QuantConnect.Algorithm.Python
+QuantConnect.Algorithm.CSharp/LiveStrategy/Trading/financial_models/
+QuantConnect.Lean.Launcher/perfanalyser/
+
+.uuid
+*/.uuid
