@@ -92,7 +92,7 @@
     <None Update="config_hetao_ftx.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="config_hetao_binance.json">
+    <None Update="config_binance.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="dex_market.json">

@@ -78,7 +78,7 @@
   },
 
   // engine
-  "data-folder": "c:/work/data/quantconnect",
+  "data-folder": "/mnt/data/share/quantconnect",
 
   // web address for history data 
   // Singapore Server
