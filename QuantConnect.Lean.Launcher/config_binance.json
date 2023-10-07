@@ -260,7 +260,7 @@
     "warm-up-resolution": "Minute",
     "warm-up-periods": 34560,
     "lambda": 0.99989, //0.99989,//0.94
-    "start": "2023/3/1",
+    "start": "2023/4/1",
     "end": "2023/8/15",
     "output-base-directory": "/home/linzhuoyuan/configs/binance/output-bull-20211101-20220821-2_save1",
     "get-base": true,
